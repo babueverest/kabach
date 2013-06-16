@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kabach</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="../dist/leaflet.ie.css" /><![endif]-->
+	<!css>
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<!/js>	
+	<!js>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+	<!/js>
+</head>
+<body>
+	<div id="map" style="height: 400px"></div>
+
+	<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+	<script>
+
+		var map = L.map('map').setView([ 27.7075392, 85.3146122], 13);
+
+		L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+		}).addTo(map);
+
+
+		L.marker([ 27.7075392, 85.3146122]).addTo(map)
+			.bindPopup("<b>Victim Alert!</b><br />QRT Please Respond.").openPopup();
+
+
+	</script>
+</body>
+</html>
+
